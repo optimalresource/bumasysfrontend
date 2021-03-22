@@ -187,6 +187,10 @@ function browserSyncInit(done) {
   browserSync.init({
     server: './dist'
   });
+  watch('src/**/*.html', compileHTML);
+  watch(['src/assets/scss/**/*', 'src/assets/scss/*'], compileSCSS);
+  watch('src/assets/js/*.js', compileJS);
+  watch('src/assets/img/**/*', copyImages);
   return done();
 }
 
